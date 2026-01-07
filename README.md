@@ -5,7 +5,7 @@
 ```text
 house-price-prediction-satellite/
 │
-├── preprocessing.ipynb        # Data cleaning, EDA, image–price mapping
+├── preprocessing_.ipynb        # Data cleaning, EDA, image–price mapping
 ├── model_training.ipynb       # XGBoost, CNN training and fusion model
 ├── data_fetcher.py            # Script to download satellite images via API
 ├── 23323021_final.csv         # Final test predictions (submission file)
