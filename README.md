@@ -3,28 +3,15 @@
 ### This project aims to predict house prices by combining tabular housing attributes (such as bedrooms, bathrooms,  square footage, etc.) with satellite imagery of the surrounding neighborhood.The motivation is to evaluate whether visual context (green cover, road structure, neighborhood layout) provides complementary information beyond traditional tabular features.This project compares Tabular-only model vs Tabular+Image based fusion model.
 ## 2. Repository Structure
 ```text
-CDC/
-├── data_fetcher.py                  # Script to download satellite images via API
-├── README.md                        # Project setup and usage instructions
-├── 23323021_report.pdf              # Final project report (PDF)
-
-├── data/
-│   └── raw/
-│       ├── train1.xlsx              # Training tabular data
-│       ├── test2.xlsx               # Test tabular data
-│       ├── images_train          # Downloaded satellite images (train)
-│       └── images_test             # Downloaded satellite images (test)
-
-├── notebooks/
-│   ├── preprocessing_.ipynb          # Data cleaning, EDA, image–price mapping
-│   ├── model_training.ipynb         # Tabular, CNN, and fusion model training
-│   └── 23323021_final.csv            # Final test set predictions (submission file)
-
-├── models/
-│   ├── image_only_best.pth           # Best CNN model checkpoint
-│   ├── image_only_checkpoint.pth     # Intermediate CNN checkpoint
-│   └── training_history.json         # Training metrics and loss curves
-
+house-price-prediction-satellite/
+│
+├── preprocessing.ipynb        # Data cleaning, EDA, image–price mapping
+├── model_training.ipynb       # XGBoost, CNN training and fusion model
+├── data_fetcher.py            # Script to download satellite images via API
+├── 23323021_final.csv         # Final test predictions (submission file)
+├── 23323021_report.pdf        # Project report (PDF)
+├── README.md                  # Project documentation
+└── LICENSE
  ```
 ## 3. Setup Instructions
 ### 3.1 Clone the Repository 
@@ -50,11 +37,7 @@ export GOOGLE_MAPS_API_KEY="YOUR_API_KEY"
 ```bash
 python data_fetcher.py 
 ```
-### This downloads and stores the images in 
-```text
-data/raw/images_train
-data/raw/images_test
-```
+### This downloads the training and test images.
 
 ## 5. Run the Preprocessing Notebook
 ```bash
